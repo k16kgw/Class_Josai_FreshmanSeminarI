@@ -1,0 +1,43 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+project:
+  id: 080cff2a-242e-4053-a576-344e00a4c26d
+  title: Freshman Seminar I
+  description: 城西大学理学部情報数理学科1年生対象科目
+  authors:
+    - name: Keiichiro Kagawa
+  github: https://github.com/k16kgw/Class_Josai_FreshmanSeminarI
+  # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
+  bibliography:
+    - references.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  numbering:
+    # title: true
+    headings: true
+    # あるいは必要なレベルだけ
+    # heading_2: true
+    # heading_3: true
+  toc:
+    - file: intro.md
+    - file: contents/1_preparation.md
+    # - file: contents/2_variable.md
+    # - file: contents/3_if.md
+    # - file: contents/4_for.md
+    # - file: contents/5_function.md
+    # - file: contents/6_file.md
+    # - file: contents/7_integer.md
+    # - file: contents/8_algorithm.md
+    # - file: contents/9_calculus.md
+    # - file: contents/10_random.md
+    # - file: contents/11_visualization.md
+    # - file: contents/12_editor.md
+    # - file: contents/13_terminal.md
+
+site:
+  options:
+    logo: logo.png
+    folders: true
+  template: book-theme
