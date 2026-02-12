@@ -40,5 +40,5 @@ site:
   options:
     # logo: logo.png
     folders: true
-  # template: book-theme
-  template: article-theme
+  template: book-theme
+  # template: article-theme
