@@ -26,17 +26,17 @@ project:
     - file: intro.md
     - file: contents/1_preparation.md
     - file: contents/2_security.md
-    # - file: contents/3_if.md
-    # - file: contents/4_for.md
-    # - file: contents/5_function.md
-    # - file: contents/6_file.md
-    # - file: contents/7_integer.md
-    # - file: contents/8_algorithm.md
-    # - file: contents/9_calculus.md
-    # - file: contents/10_random.md
-    # - file: contents/11_visualization.md
-    # - file: contents/12_editor.md
-    # - file: contents/13_terminal.md
+    # - file: contents/3_word1.md
+    # - file: contents/4_word2.md
+    # - file: contents/5_word3.md
+    # - file: contents/6_writing.md
+    # - file: contents/7_academic.md
+    # - file: contents/8_report.md
+    # - file: contents/9_powerpoint1.md
+    # - file: contents/10_powerpoint2.md
+    # - file: contents/11_tex1.md
+    # - file: contents/12_tex2.md
+    # - file: contents/13_tex3.md
 
 site:
   options:
