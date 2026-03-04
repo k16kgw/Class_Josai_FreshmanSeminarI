@@ -6,6 +6,8 @@ project:
   description: 城西大学理学部情報数理学科1年生対象科目
   authors:
     - name: Keiichiro Kagawa
+    - email: kkagawa@josai.ac.jp
+    # - affiliation: 3号棟3階3306
   github: https://github.com/k16kgw/Class_Josai_FreshmanSeminarI
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   bibliography:
@@ -23,7 +25,7 @@ project:
   toc:
     - file: intro.md
     - file: contents/1_preparation.md
-    # - file: contents/2_variable.md
+    - file: contents/2_security.md
     # - file: contents/3_if.md
     # - file: contents/4_for.md
     # - file: contents/5_function.md

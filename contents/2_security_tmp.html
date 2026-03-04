@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2_security.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E7%AC%AC2%E5%9B%9E%E6%83%85%E5%A0%B1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%83%BB%E6%83%85%E5%A0%B1%E3%83%A2%E3%83%A9%E3%83%AB">第2回：情報セキュリティ・情報モラル</h1>
+<!-- （プライバシー保護，著作権，不正利用） -->
+<h1 id="%E6%A6%82%E8%A6%81">概要</h1>
+<p>本科目の後半で扱う「レポート作成」「プレゼン資料作成」「TeX」に進むために，<strong>大学生活で“やってはいけない”と“やるべき”の基礎</strong>を押さえます．<br>
+特に，レポートや発表で必ず関わる <strong>プライバシー</strong> と <strong>著作権</strong>，そしてアカウント管理などの <strong>情報セキュリティ</strong> を扱います．</p>
+<h2 id="%E5%BE%A9%E7%BF%92">復習</h2>
+<ol>
+<li>Anaconda（Pythonの利用ツール）のインストール</li>
+<li>Microsoft Officeのインストール</li>
+<li>MacTeX（TeXを実行するためのソフトウェア）のインストール<br>
+※ TeX: 主に数式を含む文書の組版を行うプログラミング言語</li>
+<li>Visual Studio Code (VSCode) のインストール</li>
+<li>タイピング練習</li>
+</ol>
+<h2 id="%E5%88%B0%E9%81%94%E7%9B%AE%E6%A8%99">到達目標</h2>
+<ol>
+<li>情報化社会における情報モラルと情報セキュリティの知識を身につける．</li>
+</ol>
+<ul>
+<li>自分のアカウントを守るために，<strong>強い認証（パスワード管理・多要素認証）</strong> と <strong>アップデート</strong> を実践できる</li>
+<li><strong>フィッシング</strong> や <strong>不正ログイン</strong> の典型パターンを見分け，被害を避ける行動がとれる</li>
+<li>友人や他者の情報を含むデータの取り扱いについて，<strong>プライバシー保護</strong>の観点から判断できる</li>
+<li>レポート／スライドに画像・文章・コードを使うとき，<strong>引用・出典・ライセンス</strong>を意識した扱いができる</li>
+<li>「不正利用（アカウント貸し借り，海賊版，侵入行為など）」を避け，大学のルールに沿って行動できる</li>
+</ul>
+<h1 id="%E6%83%85%E5%A0%B1%E3%83%A2%E3%83%A9%E3%83%AB%E3%81%A8%E6%83%85%E5%A0%B1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E3%81%8C%E5%8F%96%E3%82%8A%E5%B7%BB%E3%81%8F%E7%8A%B6%E6%B3%81">情報モラルと情報セキュリティが取り巻く状況</h1>
+<ul>
+<li>日常生活において誰もが犯罪に巻き込まれ得る．</li>
+<li>情報化社会における犯罪には最新のIT技術が使われている．</li>
+<li>近年では生成系AIを利用した犯罪も確認されている．</li>
+</ul>
+<p>特に大学生活では次の情報を日常的に扱う．</p>
+<ul>
+<li>学内システムのアカウント（メール，LMS，Wi-Fi，図書館等）</li>
+<li>レポートや課題データ（自分の成果物）</li>
+<li>研究・演習で扱うデータ（他人の情報を含む場合も）</li>
+<li>SNSやクラウドに載る情報（意図せず公開されることも）</li>
+</ul>
+<p><span style="color:red">情報セキュリティ／情報モラルは全ての人が最低限身につける必要のある基礎教養である．</span>
+（自分を守る／友人を守る／大学や社会を守る）</p>
+<h1 id="%E6%83%85%E5%A0%B1%E3%83%A2%E3%83%A9%E3%83%AB">情報モラル</h1>
+<h1 id="%E6%83%85%E5%A0%B1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3">情報セキュリティ</h1>
+<h2 id="%E6%83%85%E5%A0%B1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A33%E8%A6%81%E7%B4%A0">情報セキュリティ3要素</h2>
+<ul>
+<li><strong>機密性</strong>（Confidentiality）
+<ul>
+<li>見られてはいけない情報を守る．</li>
+<li>例：個人情報，成績，住所，学生証番号，ログイン情報</li>
+</ul>
+</li>
+<li><strong>完全性</strong>（Integrity）
+<ul>
+<li>内容を勝手に改ざんされない．</li>
+<li>例：レポートの内容，提出データ，成績データ</li>
+</ul>
+</li>
+<li><strong>可用性</strong>（Availability）
+<ul>
+<li>必要なときに使える（消されない・止まらない）</li>
+<li>例：提出締切前にPCが壊れる／ファイルが消える（＝バックアップが重要）</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%84%85%E5%A8%81%E5%AD%A6%E7%94%9F%E3%81%8C%E9%81%AD%E3%81%84%E3%82%84%E3%81%99%E3%81%84">よくある脅威（学生が遭いやすい）</h2>
+<ul>
+<li><strong>フィッシング</strong>（偽サイト・偽メールでID/パスを盗む）</li>
+<li><strong>不正ログイン</strong>（漏えいしたパスワードの使い回し等）</li>
+<li><strong>マルウェア</strong>（添付ファイル，海賊版ソフト，怪しい拡張機能など）</li>
+<li><strong>紛失・盗難</strong>（ノートPC・スマホ）</li>
+<li><strong>設定ミス</strong>（共有リンクが“公開”になっていた，誤送信）</li>
+</ul>
+<p>※ 参考：IPA（情報処理推進機構）の「情報セキュリティ10大脅威」<a href="https://www.ipa.go.jp/security/10threats/">https://www.ipa.go.jp/security/10threats/</a></p>
+<h2 id="%E5%AF%BE%E7%AD%96">対策</h2>
+<h1 id="%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E9%98%B2%E8%A1%9B%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89%E3%83%BB%E5%A4%9A%E8%A6%81%E7%B4%A0%E8%AA%8D%E8%A8%BC%E3%83%BB%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B025%E5%88%86">アカウント防衛：パスワード・多要素認証・フィッシング（25分）</h1>
+<h2 id="%E3%83%91%E3%82%B9%E3%83%AF%E3%83%BC%E3%83%89">パスワード</h2>
+<p><strong>ダメな例</strong></p>
+<ul>
+<li>同じパスワードを複数サイトで使い回す</li>
+<li>短い／単語そのまま／誕生日や学籍番号に近い</li>
+</ul>
+<p><strong>良い方針</strong></p>
+<ul>
+<li>「長い」＋「使い回さない」＋「覚えずに管理」</li>
+<li>目標：<strong>パスワードマネージャ</strong>（iCloudキーチェーン等）を使う</li>
+</ul>
+<p><strong>被害例</strong></p>
+<ul>
+<li>沖縄県立看護大学（2023年）<a href="https://www.okinawa-nurs.ac.jp/wp-content/uploads/2023/05/kouhyou_incident.pdf">https://www.okinawa-nurs.ac.jp/wp-content/uploads/2023/05/kouhyou_incident.pdf</a></li>
+</ul>
+<p><img src="file:///Users/kkagawa/localdoc/github/Class/Class_Josai_FreshmanSeminarI/contents/figs/2/5-1.png" alt="5-1"></p>
+<h2 id="mac%E3%81%A7%E3%81%AE%E5%AE%9F%E8%B7%B5%E4%BE%8B">Macでの実践例</h2>
+<ul>
+<li>iCloudキーチェーン（パスワード）を有効化し，Safariで自動生成パスワードを使う</li>
+<li>重要アカウント（大学メール，Apple ID，GitHubなど）から優先的に整備する</li>
+</ul>
+<h2 id="%E5%A4%9A%E8%A6%81%E7%B4%A0%E8%AA%8D%E8%A8%BCmfa2fa">多要素認証（MFA/2FA）</h2>
+<p>パスワードが漏れても，<strong>追加の要素</strong>がないとログインできないようにする仕組み．<br>
+推奨：認証アプリ，セキュリティキー等（SMSは状況により注意点あり）</p>
+<blockquote>
+<p>参考（政府系の解説PDFの一例）：多要素認証やパスワードの考え方<br>
+https://security-portal.cyber.go.jp/guidance/pdf/handbook/handbook-05.pdf</p>
+</blockquote>
+<h2 id="%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E3%81%AE%E8%A6%8B%E5%88%86%E3%81%91%E6%96%B9">フィッシングの見分け方</h2>
+<p><strong>典型パターン</strong></p>
+<ul>
+<li>「至急」「アカウント停止」「未払い」「当選」など不安や欲を煽る</li>
+<li>リンク先が“それっぽい”偽ドメイン</li>
+<li>添付ファイルを開かせる（.zip / .html / Officeファイル等）</li>
+</ul>
+<p><strong>行動ルール</strong></p>
+<ul>
+<li>メールのリンクを踏まず，<strong>公式サイトから自分でアクセス</strong>する．</li>
+<li>“今すぐ”と言われても，<strong>一呼吸おいて確認</strong>する．</li>
+<li>迷ったら，<strong>スクショ＋相談</strong>（教員／情報推進課など）</li>
+</ul>
+<h1 id="%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%99%82%E4%BB%A3%E3%81%AE%E8%91%97%E4%BD%9C%E6%A8%A9">デジタル時代の著作権</h1>
+<h2 id="%E7%9F%A5%E7%9A%84%E8%B2%A1%E7%94%A3%E6%A8%A9">知的財産権</h2>
+<ul>
+<li>知的財産：「知的な活動で創造した情報・・・音楽，文章，コンピュータのプログラム，　製品のデザインやアイデア」（情報I Next, 数研出版，令和4年4月1日）</li>
+<li>知的財産権：「知的財産の価値を守る権利」（情報I Next, 数研出版，令和4年4月1日）</li>
+</ul>
+<h2 id="%E8%91%97%E4%BD%9C%E6%A8%A9">著作権</h2>
+<ul>
+<li>知的財産権の一つに「著作権」がある．</li>
+</ul>
+<p><img src="file:///Users/kkagawa/localdoc/github/Class/Class_Josai_FreshmanSeminarI/contents/figs/2/6-1.png" alt="6-1"></p>
+<ul>
+<li>他人が作った文章・画像・図・コード・スライドは，基本的に<strong>勝手に使えない</strong>．</li>
+<li>著作権法：「著作物を作った人（著作者）や伝えた人（伝達者）の権利を保護する法律」（情報I Next, 数研出版，令和4年4月1日）</li>
+<li>著作権侵害の例：他人の著作物の無断で複製して利用したり、一部を改変して公表すると著作権の侵害となる．（情報I Next, 数研出版，令和4年4月1日）</li>
+<li>ただし，条件を満たす「引用」は許される．</li>
+</ul>
+<h2 id="%E5%BC%95%E7%94%A8">引用</h2>
+<ul>
+<li>著作権法32条「公表された著作物は，引用して利用することができる」</li>
+<li>レポート，論文を作成するとき，適切な引用を行うことは，自分の主張の正確性の裏付けや，独自性の主張として有効である．（アイザック・ニュートン「巨人の肩に乗る」）</li>
+</ul>
+<!-- ⭐️要出典⭐️ -->
+<blockquote>
+<p>参考：CRIC（著作権情報センター）Q&amp;A（著作権の制限・引用など）<br>
+https://www.cric.or.jp/qa/hajime/hajime7.html</p>
+</blockquote>
+<h2 id="%E5%BC%95%E7%94%A8%E3%81%AE%E5%AE%9F%E5%8B%99%E3%83%AB%E3%83%BC%E3%83%AB">引用の実務ルール</h2>
+<ul>
+<li><strong>引用部分が分かる</strong>（「」や段落，図の枠などで明確に区別）</li>
+<li>自分の本文が主，引用が従（引用が本文の大半にならない）</li>
+<li><strong>出所を書く</strong>（著者，タイトル，URL，閲覧日など）</li>
+<li>図や画像を使う場合は，<strong>引用</strong>か<strong>ライセンス</strong>（CC等）か<strong>許諾</strong>かを判断</li>
+</ul>
+<h2 id="%E5%87%BA%E5%85%B8%E8%A1%A8%E8%A8%98%E3%81%AE%E4%BE%8Bweb">出典表記の例（Web）</h2>
+<ul>
+<li>著者名『ページタイトル』サイト名，URL（閲覧日：2026-02-15）</li>
+</ul>
+<h2 id="creative-commonscc%E3%81%AB%E5%87%BA%E4%BC%9A%E3%81%A3%E3%81%9F%E3%82%89">Creative Commons（CC）に出会ったら</h2>
+<ul>
+<li>CC BY / CC BY-SA / CC BY-NC など，条件がある</li>
+<li>“条件を守れば使える”ことが多いが，<strong>条件は必ず確認</strong>する</li>
+</ul>
+<h1 id="%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E6%8E%88%E6%A5%AD%E3%81%A7%E6%B0%97%E3%82%92%E4%BB%98%E3%81%91%E3%82%8B%E3%81%93%E3%81%A8">オンライン授業で気を付けること</h1>
+<hr>
+<h1 id="%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%995%E5%88%86%E3%81%A7ok">事前準備（5分でOK）</h1>
+<ul>
+<li>自分が普段使う端末（Mac）で，次を確認しておく
+<ul>
+<li>OSのアップデート通知が来ているか（後で一緒に確認します）</li>
+<li>大学アカウント（メール／LMS等）のID・パスワードが分かるか</li>
+</ul>
+</li>
+<li>可能なら：スマホを持参（多要素認証の確認で使う場合があります）</li>
+</ul>
+<hr>
+<h1 id="%E6%8E%88%E6%A5%AD%E3%81%AE%E6%B5%81%E3%82%8C105%E5%88%86">授業の流れ（105分）</h1>
+<ol>
+<li>導入：なぜ情報セキュリティ／モラルが必修なのか（10分）</li>
+<li>情報セキュリティの基礎：脅威と対策の全体像（20分）</li>
+<li>アカウント防衛：パスワード・多要素認証・フィッシング（25分）</li>
+<li>プライバシー保護：個人情報・SNS・クラウド（20分）</li>
+<li>著作権と引用：レポート／スライドで守ること（20分）</li>
+<li>まとめ・ミニ確認テスト・課題説明（10分）</li>
+</ol>
+<hr>
+<h1 id="4-%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC%E4%BF%9D%E8%AD%B7%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E3%83%BBsns%E3%83%BB%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%8920%E5%88%86">4. プライバシー保護：個人情報・SNS・クラウド（20分）</h1>
+<h1 id="41-%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E3%81%A3%E3%81%BD%E3%81%84%E3%82%82%E3%81%AE%E3%81%AF%E5%BA%83%E3%81%84">4.1 「個人情報っぽいもの」は広い</h1>
+<ul>
+<li>氏名・住所・電話番号だけでなく
+<ul>
+<li>学籍番号，顔写真，位置情報，授業の履修状況</li>
+<li>SNSの投稿履歴，レポートの内容（本人が特定できる場合）</li>
+</ul>
+</li>
+</ul>
+<h1 id="42-%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A1%E3%81%AA%E4%BA%8B%E6%95%85%E4%BE%8B%E7%9F%AD%E3%81%84%E3%82%B1%E3%83%BC%E3%82%B9">4.2 ありがちな事故例（短いケース）</h1>
+<ul>
+<li>グループ課題で，共有フォルダを「リンクを知っている全員」公開にしていた</li>
+<li>スクリーンショットに，通知・メール・氏名が写り込んでいた</li>
+<li>SNSで「今ここにいる」が分かる投稿をしてしまった</li>
+</ul>
+<h1 id="43-%E4%BB%8A%E6%97%A5%E3%81%AE%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%9D%E3%82%A4%E3%83%B3%E3%83%88%E5%AE%9F%E8%B7%B5">4.3 今日のチェックポイント（実践）</h1>
+<ul>
+<li>共有リンクは「誰が見られるか」を必ず確認（限定公開／権限）</li>
+<li>提出前に，ファイル・画像・PDFの写り込み（名前，学籍番号，位置情報）を確認</li>
+<li>生成系AIに入力する内容：<strong>個人情報／機密情報を入れない</strong><br>
+（第4回で詳しく扱いますが，今日の段階でも“入れない”が基本）</li>
+</ul>
+<hr>
+<h1 id="6-%E4%B8%8D%E6%AD%A3%E5%88%A9%E7%94%A8%E3%82%92%E3%81%97%E3%81%AA%E3%81%84%E5%A4%A7%E5%AD%A6%E3%81%A7%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A1%E3%81%AAng10%E5%88%86">6. 不正利用をしない：大学でありがちなNG（10分）</h1>
+<h1 id="61-%E3%81%93%E3%82%8C%E3%81%AFng%E4%BE%8B">6.1 これはNG（例）</h1>
+<ul>
+<li>アカウントの貸し借り（友人にID/パスワードを教える）</li>
+<li>海賊版サイトからのダウンロード（PDF，ソフト，動画など）</li>
+<li>他人のデータやアカウントへの侵入（興味本位でもNG）</li>
+<li>レポートのコピペ提出（盗用・剽窃）</li>
+</ul>
+<blockquote>
+<p>参考（制度の概要に触れるための資料例）：警察庁「不正アクセス禁止法」解説PDF<br>
+https://www.npa.go.jp/bureau/cyber/pdf/1_kaisetsu.pdf</p>
+</blockquote>
+<hr>
+<h1 id="%E3%83%9F%E3%83%8B%E6%BC%94%E7%BF%92%E6%8E%88%E6%A5%AD%E5%86%85%E3%81%A7%E5%AE%9F%E6%96%BD">ミニ演習（授業内で実施）</h1>
+<h1 id="%E6%BC%94%E7%BF%92a%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0%E5%88%A4%E5%AE%9A10%E5%88%86">演習A：フィッシング判定（10分）</h1>
+<p>次のメール文を読んで，危険度を「高／中／低」で判断し，理由を1行で書く．</p>
+<ul>
+<li>例1：大学を装った「パスワード期限切れ」通知</li>
+<li>例2：配送業者を装った「不在通知」リンク</li>
+<li>例3：サービス利用明細の“確認はこちら”リンク</li>
+</ul>
+<blockquote>
+<p>※ここは授業当日に例文を配布（またはスライド表示）して実施</p>
+</blockquote>
+<h1 id="%E6%BC%94%E7%BF%92b%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%A7%E3%81%AE%E5%9B%B3%E3%81%AE%E5%88%A9%E7%94%A8%E5%88%A4%E6%96%AD10%E5%88%86">演習B：レポートでの“図の利用”判断（10分）</h1>
+<p>「この図をレポートに貼りたい」—次のどれで対応するべき？</p>
+<ol>
+<li>引用（出典つき）</li>
+<li>CC等のライセンスに従って利用</li>
+<li>自分で描き直す（参考にした旨を書く）</li>
+<li>許諾を取る／別素材にする</li>
+</ol>
+<hr>
+<h1 id="%E3%81%BE%E3%81%A8%E3%82%81%E4%BB%8A%E6%97%A5%E3%81%AE%E5%BF%85%E3%81%9A%E3%82%84%E3%82%8B3%E3%81%A4">まとめ：今日の“必ずやる”3つ</h1>
+<ol>
+<li><strong>パスワード使い回しを止める</strong>（パスワードマネージャ導入）</li>
+<li><strong>多要素認証を有効化</strong>（できるものから）</li>
+<li><strong>レポートは「出典を書く」</strong>（文章も図も）</li>
+</ol>
+<hr>
+<h1 id="%E8%AA%B2%E9%A1%8C%E6%AC%A1%E5%9B%9E%E3%81%BE%E3%81%A7">課題（次回まで）</h1>
+<h1 id="%E8%AA%B2%E9%A1%8C1%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E8%87%AA%E5%B7%B1%E7%82%B9%E6%A4%9C%E6%8F%90%E5%87%BA">課題1：セキュリティ自己点検（提出）</h1>
+<p>以下を確認し，チェックリストを提出（LMSまたはGitHub上の提出方法に合わせて指定）．</p>
+<ul>
+<li><input type="checkbox" id="checkbox0"><label for="checkbox0">OSアップデートの確認（更新があれば実施計画を立てる）</label></li>
+<li><input type="checkbox" id="checkbox1"><label for="checkbox1">大学メール／LMSのパスワード使い回し有無</label></li>
+<li><input type="checkbox" id="checkbox2"><label for="checkbox2">可能なら多要素認証の設定状況（オン／オフ）</label></li>
+<li><input type="checkbox" id="checkbox3"><label for="checkbox3">共有リンクの権限を説明できる（限定公開／全体公開など）</label></li>
+</ul>
+<h1 id="%E8%AA%B2%E9%A1%8C2%E7%9F%AD%E3%81%84%E3%83%AA%E3%83%95%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3200%E3%80%9C400%E5%AD%97">課題2：短いリフレクション（200〜400字）</h1>
+<p>次のうち1つを選び，具体例を入れて書く．</p>
+<ul>
+<li>「今日から変える行動」</li>
+<li>「危ないと思った経験（または想像）と，どう防ぐか」</li>
+<li>「レポートで著作権を守るために意識すること」</li>
+</ul>
+<hr>
+<h1 id="%E5%8F%82%E8%80%83%E8%B3%87%E6%96%99%E4%BB%BB%E6%84%8F">参考資料（任意）</h1>
+<ul>
+<li>IPA：情報セキュリティ10大脅威<br>
+https://www.ipa.go.jp/security/10threats/</li>
+<li>政府系ポータル（手引きPDF例）：多要素認証・パスワード等<br>
+https://security-portal.cyber.go.jp/guidance/pdf/handbook/handbook-05.pdf</li>
+<li>CRIC：著作権Q&amp;A（引用など）<br>
+https://www.cric.or.jp/qa/hajime/hajime7.html</li>
+<li>警察庁：不正アクセス禁止法 解説（PDF）<br>
+https://www.npa.go.jp/bureau/cyber/pdf/1_kaisetsu.pdf</li>
+</ul>
+<hr>
+
+</body>
+</html>
