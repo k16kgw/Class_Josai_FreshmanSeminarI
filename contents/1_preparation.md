@@ -1,10 +1,15 @@
-# 第1回：環境構築
+# 第1回　Mac利用環境の構築
+
+科目: フレッシュマンセミナー
+学期: 2026春
+時間割: 月２
+日付: 2026/04/13
 
 ## 講義概要
 
 ### カリキュラム
 
-![カリキュラム](./figs/1/1-1.png)
+![1-1.png](./figs/1/1-1.png)
 
 ### 必修内容
 
@@ -29,20 +34,18 @@
 
 ### 成績評価
 
-- <span style="color:red">平常点40点・課題点60点の計100点</span>で成績を評価する．
-- <span style="color:red">欠席を1回するごとに平常点から10点減点</span>し，<span style="color:red">遅刻を1回するごとに平常点から5点減点</span>する．
-体調不良・法事・部活動の大会などのやむを得ない事情により講義を欠席する場合には事務に連絡すること．
-連絡のあった回については平常点の減点を行わない．
-- なお，欠席回の課題は課題点に加算されるため，後日提出すること．
-- 本学の規程（[学則・学位規程・ガバナンスコード｜城西大学](https://www.josai.ac.jp/about/information/gakusokukitei/)）に従い，<span style="color:red">5回以上欠席した場合には単位が与えられない（Z評価）</span>．
-欠席届のあった回についても欠席回数にカウントされるため注意すること．
-<!-- - 本学の規程（[令和７年度城西大学学則](https://www.josai.ac.jp/media/32-daigakubinran2025.pdf) 第40条2項）に従い，<span style="color:red">5回以上欠席した場合には単位が与えられない（Z評価）</span>． -->
+- 平常点40点・課題点60点の計100点で成績を評価する．
+- 欠席を1回するごとに平常点から10点減点する．
+なお，体調不良・法事・部活動の大会などのやむを得ない事情により講義を欠席する場合には担当教員([kkagawa@josai.ac.jp](mailto:kkagawa@josai.ac.jp))までメールで連絡すること．
+連絡のあった学生には代替課題を課し，課題の評価に応じて10点を最大点とした加点を行う．
+- 本学の規程（[令和７年度城西大学学則](https://www.josai.ac.jp/media/32-daigakubinran2025.pdf) 第40条2項）に従い，5回以上欠席した場合には単位が与えられない（Z評価）
+代替課題に取り組み減点がなかった場合であっても，欠席回数はカウントされることに注意すること．
 - 他の学生の講義の受講を阻害する行為を行なった学生は平常点から減点する．
-- 全ての講義が終了した段階で<span style="color:red">平常点と課題点の総点が60点以上にならなかった場合には単位は与えられない（F評価）</span>．
+- 全ての講義が終了した段階で平常点と課題点の総点が60点以上にならなかった場合には単位は与えられない（F評価）．
 
 ### 準備学習等の指示
 
-- <span style="color:red">各自のMacBookを持参すること</span>．各回の課題では各自のMacBookを使用する．
+- 各自のMacBookを持参すること．各回の課題では各自のMacBookを使用する．
 - MacBookは充電をしておくこと．
 
 ### 出席登録
@@ -51,16 +54,84 @@
 - 講義の始めにパスワードを掲示するため，これを入力することで出席登録を完了する．
 - 登録可能時間は講義開始時刻から15分間(11:00-11:15)とし，それ以降15分間(11:15-11:30)での登録は遅刻扱いとする．また，それ以降の登録はできないため欠席扱いとなる．
 
-## コンピュータ環境の整備
+## 到達目標
 
-### 到達目標
+1. PCの基本操作
+2. 各種ソフトウェアのインストール
+    1. Anaconda（Pythonの利用ツール）のインストール
+    2. Microsoft Officeのインストール
+    3. MacTeX（TeXを実行するためのソフトウェア）のインストール<br>
+    ※ TeX: 主に数式を含む文書の組版を行うプログラミング言語
+    4. Visual Studio Code (VSCode) のインストール
+3. タイピング練習
 
-1. Anaconda（Pythonの利用ツール）のインストール
-2. Microsoft Officeのインストール
-3. MacTeX（TeXを実行するためのソフトウェア）のインストール<br>
-   ※ TeX: 主に数式を含む文書の組版を行うプログラミング言語
-4. Visual Studio Code (VSCode) のインストール
-5. タイピング練習
+## OS (Operating System)
+
+- コンピュータ全体を管理する基本ソフト
+- 例：
+    - macOS
+    - Linux
+    - Windows
+- macOS / Linux は **UNIX系OS** と呼ばれる．
+    
+    特徴
+    
+    - コマンド操作が強力．
+    - プログラミング・研究用途に適している．
+    - サーバ・AI・数値計算で広く使われている．
+
+## 効率的にパソコンを操作するために
+
+![keyboard.jpeg](./figs/keyboard.jpeg)
+
+### 特別な役割を持つキー
+
+- ⇥：Tabキー
+- ⇧：Shiftキー
+- ⌘：Commandキー（Windowsでのcontrolキー）
+- ^：Controlキー
+- ⌥：Optionキー（Windowsでのaltキー）
+- ⇪：Caps Lockキー…アルファベットの入力を大文字に固定する．（日本語では使う機会は少ないので，システム設定で他のキーに置き換える人も多い）
+
+### ショートカット
+
+| キー入力 | 動作 |
+| --- | --- |
+| ⌘+C | 選択された文字をクリップボードにコピー |
+| ⌘+X | 選択された文字をクリップボードにコピーし，選択箇所の文字を削除 |
+| ⌘+V | カーソル位置にクリップボードに保存された文字を貼り付け（ペースト） |
+| ⌘+Z | 直前に行った操作をキャンセルして元に戻す |
+| ⌘+A | 全てを選択する |
+| ⌘+S | ファイルを保存する |
+| ⌘+N | 新しいファイル・ウィンドウを作成する |
+| ⌘+⇧+3 | 画面全体のスクリーンショットを撮る． |
+| ⌘+⇧+4 | 画面内指定の範囲のスクリーンショットを撮る． |
+| ⌘+⇧+5 | 様々な条件でスクリーンショットを撮る．画面録画も可能． |
+
+※ スクリーンショット：画面を画像ファイルとして保存する機能．
+
+---
+
+## コンピュータの操作
+
+コンピュータの操作方法にはGUIとCUIの2種類が存在する．
+
+- **GUI** (Graphical User Interface)
+    - アイコン、ボタン、ウィンドウなどの視覚的な要素を使って、マウスやタッチパネルで直感的にコンピューターを操作するための画面（インターフェース）
+- **CUI** (Character User Interface)
+    - キーボードから文字（コマンド）を入力してコンピューターを操作するための画面（インターフェース）
+    - CUIの例：ターミナル（Windowsでは「コマンドライン」）
+
+### パス（path）の考え方
+
+- コンピュータのファイルは階層構造の中に保存されている．
+- どの階層にいるかの場所を指定することでファイルを指定することができる．
+- 場所の指定方法には次の2種類がある．
+    - **絶対パス**：コンピュータ内の絶対的な位置．例：`/Users/<ユーザ名>/Documents/`
+        
+        ※ ただし `<ユーザ名>` は各自のユーザ名に変換すること
+        
+    - **相対パス**：現在いるディレクトリから見た相対的な位置．例：`./`：現在のディレクトリ，`../`：一つ上の階層のディレクトリ．
 
 ## Anacondaのインストール
 
@@ -70,70 +141,64 @@
 ### 手順
 
 1. MacのCPU・メモリの構成を確認する．
-
-![2-1-1](./figs/1/2-1-1.png)
-
-![2-1-2](./figs/1/2-1-2.png)
-
-2. Anacondaのページにアクセスする．
-
-![2-1-3](./figs/1/2-1-3.png)
-
-3. 自分のMacのチップに合わせてダウンロードする．
-
-![2-1-4](./figs/1/2-1-4.png)
-
-4. ダウンロードしたパッケージを確認し，インストールする．
-
-![2-1-5](./figs/1/2-1-5.png)
-
-![2-1-6](./figs/1/2-1-6.png)
-
-![2-1-7](./figs/1/2-1-7.png)
-
-![2-1-8](./figs/1/2-1-8.png)
-
-![2-1-9](./figs/1/2-1-9.png)
-
-![2-1-10](./figs/1/2-1-10.png)
-
-![2-1-11](./figs/1/2-1-11.png)
-
-![2-1-12](./figs/1/2-1-12.png)
-
-![2-1-13](./figs/1/2-1-13.png)
-
-![2-1-14](./figs/1/2-1-14.png)
-
-![2-1-15](./figs/1/2-1-15.png)
-
-5. インストールを確認し，ソフトを開く．
-
-![2-1-16](./figs/1/2-1-16.png)
-<!-- ⭐️要確認⭐️Launchpadがあるかを確認する -->
-
-![2-1-17](./figs/1/2-1-17.png)
-
-![2-1-18](./figs/1/2-1-18.png)
+    
+    ![2-1-1.png](./figs/1/2-1-1.png)
+    
+    ![2-1-2.png](./figs/1/2-1-2.png)
+    
+2. Anacondaのページにアクセスし，ダウンロードする．
+    
+    [https://www.anaconda.com/download/success](https://www.anaconda.com/download/success)
+    
+    ![image.png](./figs/1/image.png)
+    
+3. ダウンロードしたパッケージを確認し，インストールする．
+（パッケージは `/Users/<ユーザ名>/Downloads` にダウンロードされている）
+    
+    ![2-1-5.png](./figs/1/2-1-5.png)
+    
+    ![2-1-16](./figs/1/2-1-6.png)
+    
+    ![2-1-7.png](./figs/1/2-1-7.png)
+    
+    ![2-1-8.png](./figs/1/2-1-8.png)
+    
+    ![2-1-9.png](./figs/1/2-1-9.png)
+    
+    ![2-1-10.png](./figs/1/2-1-10.png)
+    
+    ![2-1-11.png](./figs/1/2-1-11.png)
+    
+    ![2-1-12.png](./figs/1/2-1-12.png)
+    
+    ![2-1-13.png](./figs/1/2-1-13.png)
+    
+    ![2-1-14.png](./figs/1/2-1-14.png)
+    
+    ![2-1-15.png](./figs/1/2-1-15.png)
+    
+4. インストールを確認し，アプリケーションフォルダから「Anaconda-Navigator」を開く．
+    
+    ![2-1-18.png](./figs/1/2-1-18.png)
+    
 
 ## Microsoft Officeのインストール
 
-- [https://www.josai.ac.jp/inforesearch/office_desktop/](https://www.josai.ac.jp/inforesearch/office_desktop/)にアクセスし，記載の手続きに従う．
+[https://www.josai.ac.jp/inforesearch/office_desktop/](https://www.josai.ac.jp/inforesearch/office_desktop/) にアクセスし，記載の手続きに従う．
 
-![2-2](./figs/1/2-2.png)
+![2-2.png](./figs/1/2-2.png)
 
 ## MacTeXのインストール
 
-- [https://tug.org/mactex/mactex-download.html](https://tug.org/mactex/mactex-download.html
-)にアクセスし，下画像の⭕️をクリックする．
+[https://tug.org/mactex/mactex-download.html](https://tug.org/mactex/mactex-download.html) にアクセスし，下画像の⭕️をクリックする．
 
-![2-3](./figs/1/2-3.png)
+![2-3.png](./figs/1/2-3.png)
 
 ## Visual Studio Codeのインストール
 
-- [https://code.visualstudio.com/download](https://code.visualstudio.com/download)にアクセスし，下画像の⭕️をクリックする．
+[https://code.visualstudio.com/download](https://code.visualstudio.com/download)にアクセスし，下画像の⭕️をクリックする．
 
-![2-4](./figs/1/2-4.png)
+![2-4.png](./figs/1/2-4.png)
 
 ## タイピング練習
 
@@ -148,11 +213,16 @@
 
 出典：[https://upload.wikimedia.org/wikipedia/commons/6/67/TouchTyping_HomePosition_QWERTY.png](https://upload.wikimedia.org/wikipedia/commons/6/67/TouchTyping_HomePosition_QWERTY.png)
 
-```{tip} 練習のポイント
+### 練習のコツ
+
 - 始めは正確さを追求，9割以上正確にタイプできるようになったら速さを上げる．
-- 数学・スポーツ・タイピング，技術を習得する分野のいずれにおいても共通する考え方．
-```
+- 数学・スポーツ・タイピング，技術を習得するいずれの分野においても共通する考え方．
 
 ### 練習サイト
 
 - 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
+- e-typing [https://www.e-typing.ne.jp/](https://www.e-typing.ne.jp/)
+
+## 次回の準備
+
+- Mac bookを充電・持参すること
