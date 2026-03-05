@@ -102,8 +102,6 @@
 パスワードが漏れても，**追加の要素**がないとログインできないようにする仕組み．  
 推奨：認証アプリ，セキュリティキー等（SMSは状況により注意点あり）
 
-> 参考（政府系の解説PDFの一例）：多要素認証やパスワードの考え方  
-> https://security-portal.cyber.go.jp/guidance/pdf/handbook/handbook-05.pdf
 
 ## フィッシングの見分け方
 
@@ -142,15 +140,6 @@
 - 著作権法32条「公表された著作物は，引用して利用することができる」
 - レポート，論文を作成するとき，適切な引用を行うことは，自分の主張の正確性の裏付けや，独自性の主張として有効である．（アイザック・ニュートン「巨人の肩に乗る」）
 <!-- ⭐️要出典⭐️ -->
-
-> 参考：CRIC（著作権情報センター）Q&A（著作権の制限・引用など）  
-> https://www.cric.or.jp/qa/hajime/hajime7.html
-
-
-
-
-
-
 
 
 
@@ -284,16 +273,4 @@
 
 ---
 
-# 参考資料（任意）
-
-- IPA：情報セキュリティ10大脅威  
-  https://www.ipa.go.jp/security/10threats/
-- 政府系ポータル（手引きPDF例）：多要素認証・パスワード等  
-  https://security-portal.cyber.go.jp/guidance/pdf/handbook/handbook-05.pdf
-- CRIC：著作権Q&A（引用など）  
-  https://www.cric.or.jp/qa/hajime/hajime7.html
-- 警察庁：不正アクセス禁止法 解説（PDF）  
-  https://www.npa.go.jp/bureau/cyber/pdf/1_kaisetsu.pdf
-
----
 

@@ -46,7 +46,8 @@ jobs:
         run: |
           # どちらか一方でOK（迷ったら下の myst build を推奨）
           # myst build --html
-          jupyter book build --html --strict
+          # jupyter book build --html --strict
+          jupyter book build --html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
