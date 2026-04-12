@@ -2,7 +2,7 @@
 
 ## 講義情報
 
-- 対象：情報数理学科１年生Aクラス
+- 対象：情報数理学科１年生
 - 開講日：春学期月曜日２時限
 - 教室：紀-3号棟3201
 - [シラバス](https://junavi.josai.ac.jp/camweb/slbssbdu.do?value(risyunen)=2026&value(semekikn)=1&value(kougicd)=00002185)
