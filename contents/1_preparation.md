@@ -217,6 +217,15 @@
 - 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
 - e-typing [https://www.e-typing.ne.jp/](https://www.e-typing.ne.jp/)
 
+```{note} 課題
+
+タイピングのスコアのスクリーンショットを撮影し，ファイル名を「<学籍番号>_<氏名>.png」としてWebClassの「第1回課題」から提出せよ．
+
+ファイル名の例：si26999_コマちゃん.png
+
+WebClassの使い方を確認するための課題であるため，課題点はスコアによらず一律で与えられる．
+```
+
 ## 次回の準備
 
 - Mac bookを充電・持参すること
