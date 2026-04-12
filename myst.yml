@@ -25,10 +25,10 @@ project:
   toc:
     - file: intro.md
     - file: contents/1_preparation.md
-    - file: contents/2_security.md
-    - file: contents/3_word1.md
-    - file: contents/4_word2.md
-    - file: contents/5_word3.md
+    # - file: contents/2_security.md
+    # - file: contents/3_word1.md
+    # - file: contents/4_word2.md
+    # - file: contents/5_word3.md
     # - file: contents/6_writing.md
     # - file: contents/7_academic.md
     # - file: contents/8_report.md

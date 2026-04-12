@@ -217,7 +217,7 @@
 - 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
 - e-typing [https://www.e-typing.ne.jp/](https://www.e-typing.ne.jp/)
 
-```{note} 課題
+```{warning} 課題
 
 タイピングのスコアのスクリーンショットを撮影し，ファイル名を「<学籍番号>_<氏名>.png」としてWebClassの「第1回課題」から提出せよ．
 
