@@ -196,9 +196,18 @@
 
 ## Visual Studio Codeのインストール
 
-[https://code.visualstudio.com/download](https://code.visualstudio.com/download)にアクセスし，下画像の⭕️をクリックする．
+1. [https://code.visualstudio.com/download](https://code.visualstudio.com/download)にアクセスし，下画像の⭕️をクリックする．
 
 ![2-4.png](./figs/1/2-4.png)
+
+2. ダウンロードフォルダに入った `VSCode-darwin-universal.dmg` を開く．
+
+3. VS Codeのアイコンを Applications フォルダに移す（ドラッグ&ドロップする）．
+
+```{image} ./figs/1/mov2-4-1.mp4
+:alt: Visual Studio Codeのインストール動画
+:width: 100%
+```
 
 ## タイピング練習
 
