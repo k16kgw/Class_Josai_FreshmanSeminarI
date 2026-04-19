@@ -18,14 +18,15 @@ project:
       output: exports/book.pdf
   numbering:
     # title: true
-    headings: true
+    # headings: true
     # あるいは必要なレベルだけ
-    # heading_2: true
-    # heading_3: true
+    heading_1: false
+    heading_2: true
+    heading_3: true
   toc:
     - file: intro.md
     - file: contents/1_preparation.md
-    # - file: contents/2_security.md
+    - file: contents/2_security.md
     # - file: contents/3_word1.md
     # - file: contents/4_word2.md
     # - file: contents/5_word3.md
