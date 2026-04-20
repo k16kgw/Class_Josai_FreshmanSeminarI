@@ -2,7 +2,7 @@
 version: 1
 project:
   id: 080cff2a-242e-4053-a576-344e00a4c26d
-  title: Freshman Seminar I
+  title: フレッシュマンセミナーI
   description: 城西大学理学部情報数理学科1年生対象科目
   authors:
     - name: Keiichiro Kagawa
@@ -18,11 +18,14 @@ project:
       output: exports/book.pdf
   numbering:
     # title: true
-    # headings: true
+    headings: true
     # あるいは必要なレベルだけ
-    heading_1: false
-    heading_2: true
-    heading_3: true
+    # heading_1: false
+    # heading_2: true
+    # heading_3: true
+    # heading_4: true
+    # heading_5: true
+    # heading_6: true
   toc:
     - file: intro.md
     - file: contents/1_preparation.md
