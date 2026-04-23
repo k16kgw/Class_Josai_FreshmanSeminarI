@@ -15,19 +15,29 @@
 
 - Wordで文章を書けるようになる
 
+### タイピング（20分）
+
+- 指はホームポジションに置き，ここから各指で所望のキーをタイプする．
+
+![ホームポジション](https://upload.wikimedia.org/wikipedia/commons/6/67/TouchTyping_HomePosition_QWERTY.png)
+
+```{note} タイピング練習
+次のサイトなどでタイピング練習をすること（各自好きな方法で練習して良い）．
+
+- 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
+- e-typing [https://www.e-typing.ne.jp/](https://www.e-typing.ne.jp/)
+```
+
 ---
 
-## Wordとは
+## Word
 
 - Microsoft社のアプリケーションソフトウェア
+  - Word：文書作成ソフト
+  - Excel：表計算ソフト
+  - PowerPoint：プレゼンソフト
 - 公的機関，教育機関，企業で最も使われている
 - インターンシップI・Ⅱで必須
-
-:word: Word：文書作成ソフト
-
-:excel: Excel：表計算ソフト
-
-:powerpoint: PowerPoint：プレゼンソフト
 
 ## 起動
 
@@ -104,65 +114,58 @@
     
     ![image.png](./figs/3/image12.png)
     
-
 ---
 
-## ＜タイピング練習＞
+## 演習
 
-- 20分間のタイピング練習
+```{note} 演習1
+次の手順で新しいWord文書を作成せよ．
 
-練習サイト
-
-- 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
-- e-typing [https://www.e-typing.ne.jp](https://www.e-typing.ne.jp/)/
-
----
-
-## 課題
-
-```{note} 課題
-
-ファイル名を“第3回_<学籍番号>_<氏名>.docx”としたWordファイルを作成し，次の3つの内容に関する文書にせよ．
+1. Wordを起動する．
+2. 白紙の文書を作成する．
+3. 1行目に「学籍番号　氏名」を入力する．
+4. 2行目に「第3回　Wordによる文書作成1」と入力する．
+5. ファイル名を「第3回_<学籍番号>_<氏名>.docx」として保存する．
 
 ファイル名の例：第3回_SI26999_城西太郎.docx
-
-1. 自己紹介（10行以上）
-2. 情報数理学科で学びたいこと（10行以上）
-3. 動画を見た感想を書く（10行以上）
-	動画リンク https://www.ted.com/talks/hannah_fry_the_mathematics_of_love?subtitle=ja
 
 ただし次の条件を守ること．
 
 - 文字のフォントは「游ゴシック」
 - 文字の大きさは12ポイント
-- レポートの冒頭に“学籍番号　氏名”を書く
-- 動画の印象に残った場面をWordに取り込むこと
-- 動画のホームページの引用を忘れないこと
 ```
-
-### 作成例
-
-![screenshot2
-.png](./figs/3/screenshot2.png)
-
-### 提出方法
-
-- WebClassの「第3回課題」よりファイルを提出
-
-### 提出期限
-
-<span style="color: red; ">本日4月27日(月)23:59まで</span>
-
-質問等がある場合には
-
-- メール kkagawa@josai.ac.jp
-- Teamsのチャット
-
-で連絡してください．
 
 ---
 
-## 次回の準備
+## 課題
+
+```{warning} 課題1-3
+演習1のファイルに加筆する形で次の3つの内容に関する文書にせよ．
+
+1. 自己紹介（10行以上）
+2. 情報数理学科で学びたいこと（10行以上）
+3. 動画を見た感想を書く（10行以上）  
+    動画リンク https://www.ted.com/talks/hannah_fry_the_mathematics_of_love?subtitle=ja
+
+ただし次の条件を守ること．
+
+- 動画の印象に残った場面をWordに取り込むこと
+- 動画のホームページを引用すること
+```
+
+**作成例**
+
+![screenshot2.png](./figs/3/screenshot2.png)
+
+---
+
+## アナウンス
+
+### 課題の提出期限
+
+<span style="color: red; ">本日4月27日(月)23:59まで</span>
+
+### 次回の準備
 
 - 次回も今回同様，次の教科書を使用するため持参すること．
     
