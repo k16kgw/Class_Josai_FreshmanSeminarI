@@ -33,14 +33,14 @@ project:
     - file: contents/3_word1.md
     - file: contents/4_word2.md
     - file: contents/5_word3.md
-    # - file: contents/6_writing.md
-    # - file: contents/7_academic.md
-    # - file: contents/8_report.md
-    # - file: contents/9_powerpoint1.md
-    # - file: contents/10_powerpoint2.md
-    # - file: contents/11_tex1.md
-    # - file: contents/12_tex2.md
-    # - file: contents/13_tex3.md
+    # - file: contents/6_excel.md
+    # - file: contents/7_powerpoint.md
+    # - file: contents/8_writing.md
+    # - file: contents/9_academic.md
+    # - file: contents/10_tex1.md
+    # - file: contents/11_tex2.md
+    # - file: contents/12_python.md
+    # - file: contents/13_arithmetic.md
 
 site:
   options:
