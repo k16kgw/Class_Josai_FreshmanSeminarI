@@ -1,4 +1,34 @@
-# 第12回 
+# 第12回　Python入門
+
+### 前回の復習
+
+- 
+
+前回は  
+今回は
+
+### 概要
+
+- 
+
+### 到達目標
+
+- 
+
+### タイピング（20分）
+
+- 指はホームポジションに置き，ここから各指で所望のキーをタイプする．
+
+![ホームポジション](https://upload.wikimedia.org/wikipedia/commons/6/67/TouchTyping_HomePosition_QWERTY.png)
+
+```{note} タイピング練習
+次のサイトなどでタイピング練習をすること（各自好きな方法で練習して良い）．
+
+- 寿司打（スシダ）[https://sushida.net/](https://sushida.net/)
+- e-typing [https://www.e-typing.ne.jp/](https://www.e-typing.ne.jp/)
+```
+
+---
 
 ## 導入
 
@@ -70,7 +100,7 @@ Pythonはインタプリタ言語で，ライブラリが充実している．
 
 コンピュータの中身
 
-![コンピュータの中身](/contents/figs/1/1.png)
+![コンピュータの中身](figs/12/1.png)
 
 参考：[「今さら聞けない！？パソコンの中身」https://support.nec-lavie.jp/navigate/application/prevent/useful/20160405/index.html](https://support.nec-lavie.jp/navigate/application/prevent/useful/20160405/index.html)
 
@@ -82,7 +112,7 @@ Pythonはインタプリタ言語で，ライブラリが充実している．
 - 入力装置：外から情報を受け取る．
 - 出力装置：結果を外に伝える．
 
-![コンピュータ五大装置](/contents/figs/1/2.png)
+![コンピュータ五大装置](figs/12/2.png)
 
 仕組み：電圧が高いか低いかを0, 1で表現して計算が実行されている．
 
@@ -100,16 +130,16 @@ Anacondaは導入済みのものとする．
    3. フォルダ名を"Fresh"とする．
 5. "Fresh"フォルダをクリックして移動する．
 
-![3-1](/contents/figs/1/3-1.png)
-![3-2](/contents/figs/1/3-2.png)
-![3-3](/contents/figs/1/3-3.png)
-![3-4](/contents/figs/1/3-4.png)
-![3-5](/contents/figs/1/3-5.png)
-![4-1](/contents/figs/1/4-1.png)
-![4-2](/contents/figs/1/4-2.png)
-![4-3](/contents/figs/1/4-3.png)
-![4-4](/contents/figs/1/4-4.png)
-![4-5](/contents/figs/1/4-5.png)
+![3-1](figs/12/3-1.png)
+![3-2](figs/12/3-2.png)
+![3-3](figs/12/3-3.png)
+![3-4](figs/12/3-4.png)
+![3-5](figs/12/3-5.png)
+![4-1](figs/12/4-1.png)
+![4-2](figs/12/4-2.png)
+![4-3](figs/12/4-3.png)
+![4-4](figs/12/4-4.png)
+![4-5](figs/12/4-5.png)
 
 ## 実践
 
@@ -132,13 +162,13 @@ Anacondaは導入済みのものとする．
 4. Codeセルに`print("Hello World!)`と入力する．
 5. "Run"をクリックすると，セルの下に出力が表示される．
 
-![5-1](/contents/figs/1/5-1.png)
-![5-2](/contents/figs/1/5-2.png)
-![5-3](/contents/figs/1/5-3.png)
-![5-4](/contents/figs/1/5-4.png)
-![5-5](/contents/figs/1/5-5.png)
-![5-6](/contents/figs/1/5-6.png)
-![5-7](/contents/figs/1/5-7.png)
+![5-1](figs/12/5-1.png)
+![5-2](figs/12/5-2.png)
+![5-3](figs/12/5-3.png)
+![5-4](figs/12/5-4.png)
+![5-5](figs/12/5-5.png)
+![5-6](figs/12/5-6.png)
+![5-7](figs/12/5-7.png)
 
 ### 四則演算の実行
 
