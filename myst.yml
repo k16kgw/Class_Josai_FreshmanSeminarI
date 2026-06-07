@@ -35,7 +35,7 @@ project:
     - file: contents/5_word3.md
     - file: contents/6_excel.md
     - file: contents/7_powerpoint.md
-    # - file: contents/8_writing.md
+    - file: contents/8_writing.md
     # - file: contents/9_academic.md
     # - file: contents/10_tex1.md
     # - file: contents/11_tex2.md
