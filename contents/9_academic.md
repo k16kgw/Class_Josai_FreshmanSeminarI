@@ -30,7 +30,7 @@
 
 - 指はホームポジションに置き，ここから各指で所望のキーをタイプする．
 
-![ホームポジション](https://upload.wikimedia.org/wikipedia/commons/6/67/TouchTyping_HomePosition_QWERTY.png)
+![ホームポジション](./figs/TouchTyping_HomePosition_QWERTY.png)
 
 ```{note} タイピング練習
 次のサイトなどでタイピング練習をすること（各自好きな方法で練習して良い）．
