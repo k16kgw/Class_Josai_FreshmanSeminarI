@@ -1,6 +1,7 @@
 % !TEX encoding = UTF-8 Unicode
 \documentclass[uplatex,dvipdfmx,a4paper,12pt]{jsarticle}
 \usepackage{amsmath,amssymb}
+\usepackage[dvipdfmx]{graphicx}
 
 \title{TeXによる文書作成}
 \author{2025014 香川渓一郎}
@@ -34,6 +35,16 @@ $$
   \end{pmatrix}
 $$
 
+\section{画像の表示}
+
+図\ref{fig:tex-flow}に，TeXソースからPDFが作られるまでの流れを示す．
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\linewidth]{sample.png}
+  \caption{TeX文書ができるまで}
+  \label{fig:tex-flow}
+\end{figure}
 
 
 \section{おわりに}
