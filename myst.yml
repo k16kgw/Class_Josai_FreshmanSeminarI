@@ -8,7 +8,12 @@ project:
     - name: Keiichiro Kagawa
     - email: kkagawa@josai.ac.jp
     # - affiliation: 3号棟3階3306
-  github: https://github.com/k16kgw/Class_Josai_FreshmanSeminarI
+  # 公開ページからGitHub・編集・ソース表示へのリンクを出さない
+  # github: https://github.com/k16kgw/Class_Josai_FreshmanSeminarI
+  edit_url: null
+  source_url: null
+  # 既定のMarkdownソースのダウンロードを無効にする
+  downloads: []
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   bibliography:
     - references.bib
