@@ -45,7 +45,7 @@ project:
     - file: contents/10_tex1.md
     - file: contents/11_tex2.md
     - file: contents/12_python.md
-    - file: contents/13_arithmetic.md
+    # - file: contents/13_arithmetic.md
 
 site:
   options:
